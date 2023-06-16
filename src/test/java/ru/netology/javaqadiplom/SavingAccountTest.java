@@ -230,6 +230,21 @@ public class SavingAccountTest {
     }
 
     @Test
+    public void shouldPayAfterAdd() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(7_000);
+        account.pay(5_000);
+
+        Assertions.assertEquals(4_000, account.getBalance());
+    }
+
+    @Test
     public void shouldPayIfFinalBalanceEqualMinBalance() {
         SavingAccount account = new SavingAccount(
                 2_000,
