@@ -22,4 +22,14 @@ public class CreditAccountTest {
 
         Assertions.assertEquals(-8_000, account.getBalance());
     }
+
+    @Test
+    public void nullBalanceAfterFullAmount() {
+        CreditAccount account = new CreditAccount(2_000, 10_000, 15);
+
+        account.pay(2_000);
+
+        Assertions.assertEquals(0, account.getBalance());
+    }
+
 }
