@@ -49,4 +49,13 @@ public class CreditAccountTest {
 
         Assertions.assertEquals(2_000, account.getBalance());
     }
+
+    @Test
+    public void currentBalanceAfterReplenishment() {
+        CreditAccount account = new CreditAccount(2_000, 10_000, 15);
+
+        account.add(1_000);
+
+        Assertions.assertEquals(3_000, account.getBalance());
+    }
 }
