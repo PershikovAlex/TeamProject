@@ -32,4 +32,12 @@ public class CreditAccountTest {
         Assertions.assertEquals(0, account.getBalance());
     }
 
+    @Test
+    public void positiveBalanceAfterAmount() {
+        CreditAccount account = new CreditAccount(2_000, 10_000, 15);
+
+        account.pay(1_000);
+
+        Assertions.assertEquals(1_000, account.getBalance());
+    }
 }
